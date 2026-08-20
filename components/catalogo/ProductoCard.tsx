@@ -116,24 +116,49 @@ export function ProductoCard({ producto, vendedorSlug }: ProductoCardProps) {
           )}
         </div>
 
-        {/* Una sola acción */}
-        <div className="mt-2 flex items-center gap-2 no-print">
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-marca btn-wa flex-1"
-          >
-            <MessageCircle size={20} /> Lo quiero
-          </a>
-          <Link
-            href={vendedorSlug ? `/producto/${producto.slug}?v=${encodeURIComponent(vendedorSlug)}` : `/producto/${producto.slug}`}
-            className="btn-ghost px-4"
-            aria-label={`Ver ficha de ${producto.nombre}`}
-          >
-            <Icon name="lucide:arrow-right" size={18} />
-          </Link>
-        </div>
+        {/* Las acciones: si hay compra directa, ambas visibles — nada escondido detrás de la flecha */}
+        {producto.linkCompra ? (
+          <div className="mt-2 flex flex-col gap-2 no-print">
+            <a
+              href={producto.linkCompra}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-marca justify-center"
+            >
+              <Icon name="lucide:shopping-cart" size={18} /> Comprarlo ahora
+            </a>
+            <div className="flex items-center gap-2">
+              <a href={href} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-wa flex-1">
+                <MessageCircle size={18} /> Tengo dudas, escríbeme
+              </a>
+              <Link
+                href={vendedorSlug ? `/producto/${producto.slug}?v=${encodeURIComponent(vendedorSlug)}` : `/producto/${producto.slug}`}
+                className="btn-ghost px-4"
+                aria-label={`Ver ficha de ${producto.nombre}`}
+              >
+                <Icon name="lucide:arrow-right" size={18} />
+              </Link>
+            </div>
+          </div>
+        ) : (
+          <div className="mt-2 flex items-center gap-2 no-print">
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-marca btn-wa flex-1"
+            >
+              <MessageCircle size={20} /> Lo quiero
+            </a>
+            <Link
+              href={vendedorSlug ? `/producto/${producto.slug}?v=${encodeURIComponent(vendedorSlug)}` : `/producto/${producto.slug}`}
+              className="btn-ghost px-4"
+              aria-label={`Ver ficha de ${producto.nombre}`}
+            >
+              <Icon name="lucide:arrow-right" size={18} />
+            </Link>
+          </div>
+        )}
       </div>
     </motion.article>
   );
