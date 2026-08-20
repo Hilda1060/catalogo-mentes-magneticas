@@ -89,9 +89,22 @@ export default async function FichaProducto({
             {producto.facilidades && <span className="text-ink-soft">· {producto.facilidades}</span>}
           </div>
 
-          <a href={href} target="_blank" rel="noopener noreferrer" className="btn-marca btn-wa mt-2 w-full sm:w-auto">
-            <MessageCircle size={22} /> Lo quiero
-          </a>
+          <div className="mt-2 flex flex-col gap-2 sm:flex-row">
+            {producto.linkCompra ? (
+              <>
+                <a href={producto.linkCompra} target="_blank" rel="noopener noreferrer" className="btn-marca w-full sm:w-auto">
+                  <Icon name="lucide:shopping-cart" size={20} /> Comprarlo ahora
+                </a>
+                <a href={href} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-wa w-full sm:w-auto">
+                  <MessageCircle size={20} /> Tengo dudas, escríbeme
+                </a>
+              </>
+            ) : (
+              <a href={href} target="_blank" rel="noopener noreferrer" className="btn-marca btn-wa w-full sm:w-auto">
+                <MessageCircle size={22} /> Lo quiero
+              </a>
+            )}
+          </div>
         </div>
       </div>
 

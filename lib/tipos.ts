@@ -86,6 +86,8 @@ export interface Producto {
   prueba?: string;
   /** Marca el producto estrella de su categoría ("el más vendido"). */
   destacado?: boolean;
+  /** Link externo de compra directa (ej. Hotmart). Si existe, se muestra junto al botón de WhatsApp. Opcional. */
+  linkCompra?: string;
 }
 
 /** La configuración completa del catálogo. */

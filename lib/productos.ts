@@ -22,6 +22,7 @@ export const PRODUCTOS: Producto[] = [
     bono: "Incluye guía de afirmaciones diarias + rutina diaria (mañana y noche).",
     garantia: "7 días de garantía.",
     imagen: "/productos/rompe-autosabotaje.jpg",
+    linkCompra: "https://pay.hotmart.com/I103823282Y",
     destacado: true,
   },
 ];

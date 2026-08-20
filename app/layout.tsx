@@ -4,14 +4,14 @@ import { CONFIG } from "@/lib/config";
 import { estiloMarca, claseTema } from "@/lib/marca";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://catalogo-vivo-gilt.vercel.app"),
+  metadataBase: new URL("https://catalogo-mentes-magneticas-51ft.vercel.app"),
   title: `${CONFIG.marca.negocio} · Catálogo`,
   description: CONFIG.marca.descripcion,
   openGraph: {
     title: `${CONFIG.marca.negocio} · Catálogo`,
     description: CONFIG.marca.descripcion,
     type: "website",
-    images: [{ url: "/productos/vela.jpg", width: 1024, height: 1024, alt: CONFIG.marca.negocio }],
+    images: [{ url: "/productos/rompe-autosabotaje.jpg", width: 1200, height: 1200, alt: CONFIG.marca.negocio }],
   },
 };
 
